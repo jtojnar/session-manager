@@ -956,7 +956,7 @@ let Private = {
 				if (aUnique)
 					dir = this.makeUniqueSessionFileName(dir, aFileName);
 			}
-			return dir.QueryInterface(Ci.nsILocalFile);  // In Gecko 14 and up don't need to set interface to nsILocalFile
+			return dir;
 		}
 	},
 	
