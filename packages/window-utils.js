@@ -124,7 +124,7 @@ exports.watchWindows = function watchWindows(callback, winType, id, location) {
   Services.ww.registerNotification(windowWatcher);
 
   // Make sure to stop watching for windows if we're unloading
-  unload(function() Services.ww.unregisterNotification(windowWatcher));
+  unload(() => Services.ww.unregisterNotification(windowWatcher));
 }
 
 /**
@@ -173,6 +173,6 @@ exports.watchHiddenWindow = function watchHiddenWindow(callback) {
 		Services.ww.registerNotification(windowWatcher);
 
 		// Make sure to stop watching for windows if we're unloading
-		removeUnloader = unload(function() Services.ww.unregisterNotification(windowWatcher));
+		removeUnloader = unload(() => Services.ww.unregisterNotification(windowWatcher));
 	}
 }

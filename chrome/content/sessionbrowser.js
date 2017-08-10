@@ -752,7 +752,7 @@ var gSessionManagerSessionBrowser = {
 	},
 
 	checkAllNoneChecked: function() {
-		function isChecked(aItem) aItem.checked;
+		function isChecked(aItem) { return aItem.checked; }
 		
 		this.gAllTabsChecked = this.gTreeData.every(isChecked);
 		gSessionManagerSessionPrompt.gAcceptButton.disabled = this.gNoTabsChecked = !this.gTreeData.some(isChecked);
@@ -760,7 +760,7 @@ var gSessionManagerSessionBrowser = {
 	},
 	
 	updateWindowCheckbox: function(aWindow) {
-		function isChecked(aItem) aItem.checked;
+		function isChecked(aItem) { return aItem.checked; }
 		
 		// update the window's checkmark as well (0 means "partially checked")
 		aWindow.checked = aWindow.tabs.every(isChecked) ? true :
@@ -773,7 +773,7 @@ var gSessionManagerSessionBrowser = {
 		item.checked = !item.checked && !item.isPrivate;
 		this.treeView.treeBox.invalidateRow(aIx);
 
-		function isChecked(aItem) aItem.checked;
+		function isChecked(aItem) { return aItem.checked; }
 
 		if (this.treeView.isContainer(aIx)) {
 			let privateCount = 0;

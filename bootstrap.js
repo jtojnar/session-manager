@@ -32,16 +32,18 @@ const Private_Tabs_Addon = "privateTab@infocatcher";
 * @param src (String)
 * The url of a javascript file to include.
 */
-(function(global) global.include = function include(src) {
-  var o = {};
-  Components.utils.import("resource://gre/modules/Services.jsm", o);
-  try {
-    var uri = o.Services.io.newURI(
-        src, null, o.Services.io.newURI(__SCRIPT_URI_SPEC__, null, null));
-    o.Services.scriptloader.loadSubScript(uri.spec, global);
-  }
-  catch(ex) {
-    Components.utils.reportError(ex + " - " + src);
+(function(global) {
+  global.include = function include(src) {
+    var o = {};
+    Components.utils.import("resource://gre/modules/Services.jsm", o);
+    try {
+      var uri = o.Services.io.newURI(
+          src, null, o.Services.io.newURI(__SCRIPT_URI_SPEC__, null, null));
+      o.Services.scriptloader.loadSubScript(uri.spec, global);
+    }
+    catch(ex) {
+      Components.utils.reportError(ex + " - " + src);
+    }
   }
 })(this);
 

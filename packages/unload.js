@@ -64,7 +64,7 @@ exports.unload = function unload(callback, container, last) {
   if (callback == null) {
 		// combine normal and last arrays into one array with last being last
 		unloaders = unloaders[NORMAL].concat(unloaders[LAST]);
-    unloaders.slice().forEach(function(unloader) unloader());
+    unloaders.slice().forEach(unloader => unloader());
     unloaders.length = 0;
     return;
   }

@@ -53,8 +53,9 @@ catch(ex) {}
    * @param {XULElement} button - button element or array of button elements.
    */
   global.restorePosition = function(doc, button) {
-    function $(sel, all)
-      doc[all ? "querySelectorAll" : "getElementById"](sel);
+    function $(sel, all) {
+      return doc[all ? "querySelectorAll" : "getElementById"](sel);
+    }
   
     // If array of button, add them all at once in correct order
     if (Array.isArray(button)) {
@@ -123,8 +124,9 @@ catch(ex) {}
    * Find restore location in non-Australis 
    */
   function findRestoreLocationOld(doc, button) {
-    function $(sel, all)
-      doc[all ? "querySelectorAll" : "getElementById"](sel);
+    function $(sel, all) {
+      return doc[all ? "querySelectorAll" : "getElementById"](sel);
+    }
 
     let toolbar, currentset, idx, newInstall = false,
         toolbars = $("toolbar", true);
@@ -163,8 +165,9 @@ catch(ex) {}
    * Perform restore in Australis 
    */
   function performRestoreNew(doc, button, aParams) {
-    function $(sel, all)
-      doc[all ? "querySelectorAll" : "getElementById"](sel);
+    function $(sel, all) {
+      return doc[all ? "querySelectorAll" : "getElementById"](sel);
+    }
 
     // Add to Toolbar palette
     ($("navigator-toolbox") || $("mail-toolbox")).palette.appendChild(button);
@@ -184,8 +187,9 @@ catch(ex) {}
    * Perform restore in non-Australis 
    */
   function performRestoreOld(doc, button, aParams) {
-    function $(sel, all)
-      doc[all ? "querySelectorAll" : "getElementById"](sel);
+    function $(sel, all) {
+      return doc[all ? "querySelectorAll" : "getElementById"](sel);
+    }
 
     // Add to Toolbar palette
     ($("navigator-toolbox") || $("mail-toolbox")).palette.appendChild(button);
